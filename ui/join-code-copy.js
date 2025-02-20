@@ -1,4 +1,4 @@
-import {extendClass} from '/bobobunicorn-ui-tweaks/modules/ui/utils/extend.js';
+import {extendClass} from '/bobobunicorn-join-code/ui/utils/extend.js';
 import MPLobbyModel from '/core/ui/shell/mp-staging/model-mp-staging-new.js';
 import '/core/ui/shell/mp-staging/mp-staging-new.js';
 
