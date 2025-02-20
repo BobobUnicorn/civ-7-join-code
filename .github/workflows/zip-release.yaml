@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    tags:
+    - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@master
+    - name: Prepare Directory
+      shell: bash
+      run: |
+        shopt -s extglob
+        mkdir "Copy_Join_Code"
+        mv !(*.git*|Copy_Join_Code|screenshots|.*) "Copy_Join_Code"
+        shopt -u extglob
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: 'copy-join-code.zip'
+        path: 'Copy_Join_Code'
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "copy-join-code.zip"

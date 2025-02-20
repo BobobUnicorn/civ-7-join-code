@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="bobobunicorn-join-code" version="1" xmlns="ModInfo">
+	<Properties>
+		<Name>Copy Join Code</Name>
+		<Description>Copies the join code to your clipboard when you click the "Show Join Code" button in the Multiplayer lobby.</Description>
+		<Authors>BobobUnicorn</Authors>
+		<Package>Mod</Package>
+		<AffectsSavedGames>0</AffectsSavedGames>
+	</Properties>
+	<Dependencies>
+		<Mod id="core" title="LOC_MODULE_BASE_STANDARD_NAME" />
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet />
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="join-code-copy" scope="shell" criteria="always">
+			<Actions>
+				<UIScripts>
+					<Item>ui/join-code-copy.js</Item>
+				</UIScripts>
+			</Actions>
+		</ActionGroup>
+	</ActionGroups>
+</Mod>
+
